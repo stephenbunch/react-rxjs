@@ -13,11 +13,13 @@ export default class App extends React.Component {
   };
 
   constructor(props) {
-    console.log('new App');
     super(props);
-    this.state = { header: '', body: '' };
+    this.state = { header: '' };
+  }
+
+  componentDidMount() {
     this.subscription = subscribe(this, {
-      header: props.header,
+      header: this.props.header,
     });
   }
 

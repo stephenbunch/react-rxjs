@@ -11,11 +11,13 @@ export default class Page extends React.Component {
   };
 
   constructor(props) {
-    console.log('new Page');
     super(props);
     this.state = { body: '' };
+  }
+
+  componentDidMount() {
     this.subscription = subscribe(this, {
-      body: props.body,
+      body: this.props.body,
     });
   }
 
