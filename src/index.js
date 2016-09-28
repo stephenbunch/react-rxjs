@@ -8,14 +8,14 @@ import Rx from 'rxjs/Rx';
 
 import App from './App';
 
-const header = new Rx.ReplaySubject();
-const body = new Rx.ReplaySubject();
+const header = new Rx.BehaviorSubject('hello');
+const body = new Rx.BehaviorSubject('test');
 
 window.header = header;
 window.body = body;
 
-header.next('hello');
-body.next('test');
+// header.next('hello!');
+// body.next('test!');
 
 const rootEl = document.getElementById('root');
 ReactDOM.render(
